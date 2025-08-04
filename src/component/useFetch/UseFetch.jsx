@@ -2,14 +2,14 @@ import React, { useState ,useEffect } from 'react'
 import axios from 'axios'
 
 export default function UseFetch(path) {
-    const [users,setUsers] = useState([])
+    const [data,setData] = useState([])
     const [error,setError] = useState(null)
     const [isLoading,setIsLoading] = useState(true)
 
     const getUser =async ()=>{
         try{
             const response = await axios.get(`${import.meta.env.VITE_BURL}/${path}`)
-            setUsers(response.data.users)
+            setData(response.data)
         }catch(err){
           setError(err)
         }finally{
@@ -19,5 +19,5 @@ export default function UseFetch(path) {
     useEffect(()=>{
         getUser();} ,[] )
 
-  return {users, error , isLoading}
+  return {data, error , isLoading  , setData}
 }

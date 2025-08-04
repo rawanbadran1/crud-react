@@ -5,6 +5,7 @@ import Footer from './component/footer/Footer.jsx'
 import Home from './pages/home/Home.jsx'
 import About from './pages/about/About.jsx'
 import Create from './pages/user/Create.jsx'
+import Details from './pages/details/Details.jsx'
 
 
 
@@ -18,6 +19,7 @@ export default function App() {
       <Route path='/users' element={<Home/>}>  </Route>
       <Route path='/About' element={<About/>}> </Route>
       <Route path='/add'   element={<Create/>}></Route>
+      <Route path='/Details/:id' element={<Details/>}></Route>
     </Routes>
       <Footer/>
     </div>
