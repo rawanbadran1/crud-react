@@ -8,7 +8,6 @@ export default function Details() {
     const {id} = useParams()
     const{error,isLoading,data} = UseFetch(`users/${id}`);
         console.log(data.user)
-        console.log("hiii")
 
     if (isLoading){return <Loader/>}
     if(error){return <p className='text-danger'>{error.message}</p>}
